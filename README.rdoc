@@ -1,0 +1,32 @@
+= Leña
+
+Leña provides simple server-side JavaScript error logging for production Rails applications. This allows you to better track errors that occur in your front-end code.
+
+== Installation
+
+Add the following to your +application.js+:
+
+    //= require lena
+
+Add the following to your +routes.rb+:
+
+    mount Lena::Engine => "/lena"
+
+Update your +application.html.erb+ (choose one of these based on whether or not you're using Turbolinks):
+
+  <%= javascript_include_tag "application", lena.configuration %>
+  <%= javascript_include_tag "application", lena.configuration.merge("data-turbolinks-track" => true) %>
+
+== Usage
+
+Leña will now track all exceptions that are thrown in your application. You can also use Leña to log individual errors without throwing an exception. In your JavaScript, simply:
+
+    lena.log('My Error Message')
+
+== Alternative Setup
+
+Alternatively, you can import Leña separately which may impact performance, but it will catch compiler errors in any scripts included after it:
+
+  <%= javascript_include_tag "lena", lena.configuration %>
+
+This project is distributed under the MIT-LICENSE.
