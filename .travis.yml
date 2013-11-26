@@ -1,4 +1,4 @@
-script: "rake -T; rake"
+script: xvfb-run rake
 language: ruby
 rvm:
   - 1.9.3
