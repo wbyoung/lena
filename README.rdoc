@@ -12,21 +12,37 @@ Add the following to your +routes.rb+:
 
     mount Lena::Engine => "/lena"
 
-Update your +application.html.erb+ (choose one of these based on whether or not you're using Turbolinks):
+Update your +application.html.erb+:
 
   <%= javascript_include_tag "application", lena.configuration %>
-  <%= javascript_include_tag "application", lena.configuration.merge("data-turbolinks-track" => true) %>
 
-== Usage
+If you use Turbolinks or provide other options for your javascript include, you can merge them: <tt>lena.configuration.merge("data-something" => true)</tt>.
+
+== Usage Client Side
 
 Leña will now track all exceptions that are thrown in your application. You can also use Leña to log individual errors without throwing an exception. In your JavaScript, simply:
 
     lena.log('My Error Message')
 
+== Usage Server Side
+
+Leña will simply throw an exception, <tt>Lena::JavaScriptError</tt>, when it receives a log message. Why? Because you should be using {something}[https://github.com/smartinez87/exception_notification] to report server errors when they occur. Also that's basically what's happening on the client side, so why not throw an exception on the server?
+
+If you need to configure what Leña does, you can add +config/initializers/lena.rb+:
+
+    Lena.setup do |config|
+      config.javascript_handler = Proc.new do |params|
+        # Custom handling of log message here
+      end
+    end
+
+
 == Alternative Setup
 
-Alternatively, you can import Leña separately which may impact performance, but it will catch compiler errors in any scripts included after it:
+An alternative to setting up Leña on your +application.js+ file is to import Leña separately. This may impact performance, but it will catch compiler errors in any scripts included after it:
 
   <%= javascript_include_tag "lena", lena.configuration %>
+
+== License
 
 This project is distributed under the MIT-LICENSE.
