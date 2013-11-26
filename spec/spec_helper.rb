@@ -1,9 +1,13 @@
+require 'coveralls'
+
+# Enable Coveralls
+Coveralls.wear!
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'coveralls'
 require 'capybara-webkit'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -13,9 +17,6 @@ Dir[Rails.root.join("../support/**/*.rb")].each { |f| require f }
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
-
-# Enable Coveralls
-Coveralls.wear!
 
 # Support use of to and to_not in one-liners allowing use of `expect_it { to ... }`
 # syntax when should has been disabled.
