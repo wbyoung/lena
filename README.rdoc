@@ -1,4 +1,4 @@
-= Leña {<img src="https://secure.travis-ci.org/wbyoung/lena.png"/>}[http://travis-ci.org/wbyoung/lena] {<img src="https://codeclimate.com/github/wbyoung/lena.png"/>}[https://codeclimate.com/github/wbyoung/lena] {<img src="https://coveralls.io/repos/wbyoung/lena/badge.png"/>}[https://coveralls.io/r/wbyoung/lena]
+= Leña {<img src="https://badge.fury.io/rb/lena.png" alt="Gem Version" />}[http://badge.fury.io/rb/lena] {<img src="https://secure.travis-ci.org/wbyoung/lena.png"/>}[http://travis-ci.org/wbyoung/lena] {<img src="https://codeclimate.com/github/wbyoung/lena.png"/>}[https://codeclimate.com/github/wbyoung/lena] {<img src="https://coveralls.io/repos/wbyoung/lena/badge.png"/>}[https://coveralls.io/r/wbyoung/lena]
 
 Leña provides simple server-side JavaScript error logging for production Rails applications. This allows you to better track errors that occur in your front-end code.
 
