@@ -4,7 +4,7 @@ Leña provides simple server-side JavaScript error logging for production Rails 
 
 == Installation
 
-Add +lena+ to your +Gemfile+, then +bundle install+:
+Add +lena+ to your +Gemfile+, then <tt>bundle install</tt>:
 
     gem 'lena'
 
