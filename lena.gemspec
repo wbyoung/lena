@@ -6,8 +6,10 @@ require "lena/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "lena"
+  s.license     = "MIT"
   s.version     = Lena::VERSION
   s.authors     = ["Whitney Young"]
+  s.email       = ["wbyoung@gmail.com"]
   s.homepage    = "https://github.com/wbyoung/lena"
   s.summary     = "Remote JavaScript logging for Rails applications."
   s.description = "Remote JavaScript logging for Rails applications."
