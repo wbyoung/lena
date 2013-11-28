@@ -1,7 +1,7 @@
 require 'lena/rails/routing'
 
 module Lena
-  class JavaScriptError < Exception; end
+  class JavaScriptError < StandardError; end
 
   class Engine < ::Rails::Engine
     isolate_namespace Lena
