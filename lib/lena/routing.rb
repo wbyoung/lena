@@ -6,7 +6,7 @@ module Lena
     def configuration
       return {
         'data-lena-destination' => Rails.env.development? ? "local" : "",
-        'data-lena-js-url' => self.js_submission_path,
+        'data-lena-remote-url' => self.report_path,
       }
     end
   end

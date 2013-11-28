@@ -1,3 +1,3 @@
 Lena::Engine.routes.draw do
-  match 'js', to: 'lena#js', via: [:get, :post], as: :js_submission
+  match 'report', to: 'lena#report', via: [:get, :post]
 end

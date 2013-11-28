@@ -1,7 +1,7 @@
 require 'lena/rails/routing'
 
 module Lena
-  class JavaScriptError < StandardError; end
+  class ClientError < StandardError; end
 
   class Engine < ::Rails::Engine
     isolate_namespace Lena
@@ -9,8 +9,8 @@ module Lena
       app.config.assets.precompile += %w(lena.js)
     end
 
-    config.javascript_handler = Proc.new do
-      raise JavaScriptError.new
+    config.report_handler = Proc.new do
+      raise ClientError.new
     end
   end
 

@@ -4,25 +4,25 @@ describe 'lena test app' do
 
   context 'with default capture' do
     it 'throws exceptions' do
-      expect { visit lena.js_submission_path }.to raise_error(Lena::JavaScriptError)
+      expect { visit lena.report_path }.to raise_error(Lena::ClientError)
     end
   end
 
   context 'with custom capture', js: true do
     before do
-      @javascript_handler = Lena::Engine.config.javascript_handler
+      @report_handler = Lena::Engine.config.report_handler
       @events = []
       handler = Proc.new { |params| @events << params }
-      Lena.setup { |config| config.javascript_handler = handler }
+      Lena.setup { |config| config.report_handler = handler }
     end
 
     after do
-      Lena::Engine.config.javascript_handler = @javascript_handler
+      Lena::Engine.config.report_handler = @report_handler
     end
 
     it 'includes data attributes' do
       visit root_path
-      expect(page.body).to include('data-lena-js-url')
+      expect(page.body).to include('data-lena-remote-url')
       expect(page.body).to include('data-lena-destination')
     end
 
