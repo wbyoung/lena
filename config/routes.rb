@@ -1,3 +1,3 @@
 Lena::Engine.routes.draw do
-  post 'log', to: 'lena#log', as: :submission
+  match 'log', to: 'lena#log', via: [:get, :post], as: :submission
 end

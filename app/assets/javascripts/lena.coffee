@@ -18,10 +18,8 @@ handlers =
   remote: (data) ->
     query = for key, value of data when value
       "#{key}=#{encodeURIComponent(value)}"
-    xhr = new XMLHttpRequest()
-    xhr.open "post", Settings.submitURL, true
-    xhr.setRequestHeader 'Content-type', 'application/x-www-form-urlencoded'
-    xhr.send query.join('&')
+    img = new Image()
+    img.src = "#{Settings.submitURL}?#{query.join('&')}"
 
   local: (data) ->
     message = data.message
