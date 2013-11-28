@@ -58,6 +58,7 @@ lena.log = (message, stacktrace) ->
   switch Settings.destination
     when 'local' then destinations = ['local']
     when 'remote' then destinations = ['remote']
+    when 'all' then destinations = ['local', 'remote']
     else destinations = ['local', 'remote']
   lena(message, stacktrace, destinations)
 
