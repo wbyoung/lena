@@ -5,8 +5,8 @@ module Lena
   module Routing
     def configuration
       return {
-        'data-lena-destination' => Rails.env.development? ? "local" : "",
-        'data-lena-remote-url' => self.report_path,
+        'lena-destination' => Rails.env.development? ? "local" : "all",
+        'lena-remote-url' => self.report_path,
       }
     end
   end
