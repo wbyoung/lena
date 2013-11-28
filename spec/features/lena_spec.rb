@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'generating errors', js: true do
   it 'includes data attributes' do
     visit root_path
-    expect(page.body).to include('data-lena-url')
+    expect(page.body).to include('data-lena-js-url')
     expect(page.body).to include('data-lena-destination')
   end
 

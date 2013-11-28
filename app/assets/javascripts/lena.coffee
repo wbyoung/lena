@@ -8,7 +8,7 @@ Settings = do ->
     attributes = (attribute for attribute in attributes when attribute)
     attributes[0]
   destination: read('data-lena-destination')
-  submitURL: read('data-lena-url')
+  submitURL: read('data-lena-js-url')
 
 # The handlers for each type of logging.
 # These take an object with the following properties:
