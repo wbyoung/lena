@@ -40,7 +40,7 @@ lena.log('My Error Message')
 
 ## Usage Server Side
 
-Leña will simply throw an exception, `Lena::JavaScriptError`, when it receives a log message. Why? Because you should be using {something}[https://github.com/smartinez87/exception_notification] to report server errors when they occur. Also that's basically what's happening on the client side, so why not throw an exception on the server?
+Leña will simply throw an exception, `Lena::JavaScriptError`, when it receives a log message. Why? Because you should be using [something](https://github.com/smartinez87/exception_notification) to report server errors when they occur. Also that's basically what's happening on the client side, so why not throw an exception on the server?
 
 If you need to configure what Leña does, you can add `config/initializers/lena.rb`:
 
