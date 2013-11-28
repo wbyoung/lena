@@ -28,7 +28,7 @@ Update your `application.html.erb`:
 <%= javascript_include_tag "application", lena.configuration %>
 ```
 
-If you use Turbolinks or provide other options for your javascript include, you can merge them: `lena.configuration.merge("data-something" => true)`.
+If you use Turbolinks or provide other options for your JavasSript include, you can merge them: `lena.configuration.merge("data-something" => true)`.
 
 ## Usage Client Side
 
@@ -40,25 +40,41 @@ lena.log('My Error Message')
 
 ## Usage Server Side
 
-Leña will simply throw an exception, `Lena::JavaScriptError`, when it receives a log message. Why? Because you should be using [something](https://github.com/smartinez87/exception_notification) to report server errors when they occur. Also that's basically what's happening on the client side, so why not throw an exception on the server?
+Leña will simply throw an exception, `Lena::ClientError`, when it receives a log message. Why? Because you should be using [something](https://github.com/smartinez87/exception_notification) to report server errors when they occur. Also that's basically what's happening on the client side, so why not throw an exception on the server?
 
 If you need to configure what Leña does, you can add `config/initializers/lena.rb`:
 
 ```ruby
 Lena.setup do |config|
-  config.javascript_handler = Proc.new do |params|
+  config.report_handler = Proc.new do |params|
     # Custom handling of log message here
   end
 end
 ```
 
-## Alternative Setup
+## Customization
 
 An alternative to setting up Leña on your `application.js` file is to import Leña separately. This may impact performance, but it will catch compiler errors in any scripts included after it:
 
 ```erb
 <%= javascript_include_tag "lena", lena.configuration %>
 ```
+
+It is also possible to change the way that Leña handles logging on the client side. This is done with the by altering the options on the JavasScript include tag:
+
+```erb
+<%= javascript_include_tag "lena", lena.configuration.merge("data-option" => "value") %>
+```
+
+The following options are available:
+
+ * `data-lena-destination` The destination to report log messages and errors. The value is one of:
+    * `local` Report errors to the console (if available).
+    * `remote` Report errors to the server.
+    * `all` Report errors to all supported destinations (local & remote).
+   This defaults to `local` during development and `all` for production & test.
+ * `data-lena-remote-url` A url to which Leña will submit logs and errors when the destination is set to remote. You can change this to point to another location or service if need be.
+
 
 ## License
 
