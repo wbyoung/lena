@@ -29,8 +29,6 @@ handlers =
       console.warn(message)
     else if console?.log
       console.log(message)
-    else
-      alert(message)
 
 # The main Leña handler. All user calls go through here. The final
 # data is aggregated before it is dispatched to one of the handlers.
