@@ -72,4 +72,4 @@ The following options are available:
 
 ## License
 
-This project is distributed under the MIT-LICENSE.
+This project is distributed under the MIT license.
