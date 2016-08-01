@@ -1,4 +1,8 @@
-# Leña [![Gem Version](https://badge.fury.io/rb/lena.png)](http://badge.fury.io/rb/lena) [![Build Status](https://secure.travis-ci.org/wbyoung/lena.png)](http://travis-ci.org/wbyoung/lena) [![Code Review](https://codeclimate.com/github/wbyoung/lena.png)](https://codeclimate.com/github/wbyoung/lena) [![Code Coverage](https://coveralls.io/repos/wbyoung/lena/badge.png)](https://coveralls.io/r/wbyoung/lena)
+# Leña
+[![Gem Version][gem-image]][gem-url]
+[![Build status][travis-image]][travis-url]
+[![Code Climate][codeclimate-image]][codeclimate-url]
+[![Coverage Status][coverage-image]][coverage-url]
 
 Leña generates reports of client-side JavaScript errors in production Rails applications by sending error details to the server. This allows for better tracking of errors that occur in front-end code.
 
@@ -73,3 +77,12 @@ The following options are available:
 ## License
 
 This project is distributed under the MIT license.
+
+[travis-image]: http://img.shields.io/travis/wbyoung/lena.svg?style=flat
+[travis-url]: http://travis-ci.org/wbyoung/lena
+[gem-image]: http://img.shields.io/gem/v/azul.svg?style=flat
+[gem-url]: https://rubygems.org/gems/lena
+[codeclimate-image]: http://img.shields.io/codeclimate/github/wbyoung/lena.svg?style=flat
+[codeclimate-url]: https://codeclimate.com/github/wbyoung/lena
+[coverage-image]: http://img.shields.io/coveralls/wbyoung/lena.svg?style=flat
+[coverage-url]: https://coveralls.io/r/wbyoung/lena
